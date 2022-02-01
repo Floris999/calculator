@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/script.js" type="module" async></script>
+  <script src="/assets/data.js" async></script>
+  <title>Calculator</title>
+</head>
+<body>
+  <header>
+    <h1>Calculator</h1>
+  </header>
+  <div class="info-flex-section"><!-- start 3 info cards-->
+    <div class="info-box">
+      <h4 id="adrem"></h4>
+      <h5>Dit is je geselecteerde keuze:</h5>
+      <ul>
+        <li id="bus-name-adrem"></li>
+        <li id="adrem-dag"></li>
+        <li id="adrem-km"></li>
+        <li id="adrem-total"></li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h4 id="borent"></h4>
+      <h5>Dit is je geselecteerde keuze:</h5>
+      <ul>
+        <li id="bus-name-borent"></li>
+        <li id="borent-dag"></li>
+        <li id="borent-km"></li>
+        <li id="borent-total"></li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h4 id="hertz"></h4>
+      <h5>Dit is je geselecteerde keuze:</h5>
+      <ul>
+        <li id="bus-name-hertz"></li>
+        <li id="hertz-dag"></li>
+        <li id="hertz-km"></li>
+        <li id="hertz-total"></li>
+      </ul>
+    </div>
+    </div><!-- end 3 info cards-->
+    <div class="form-flex">
+        <div class="form-box">
+         <form>
+            <label for="bus">Welke bus wil je huren?</label><br>
+            <select name="bus" id="bus" onchange="selectName();"><br>
+            <option value="empty"></option>
+            <option value="citroën">Citroën Berlingo</option>
+            <option value="volkswagen">Volkswagen Crafter</option>
+            <option value="toyota">Toyota Proace</option>
+            </select><br>
+            <label for="dagen">Hoeveel dagen wil je de bus huren?</label><br>
+            <input type="text" id="periode" name="periode" onkeyup="selectPeriode();" placeholder="minimaal 1 dag" value=""><br>
+            <label for="kilometers">Hoeveel km wil je rijden?</label><br>
+            <input type="text" id="km" name="km" onkeyup="selectKm();" value="">
+         </form> 
+        </div>
+    </div>
+</body>
+</html>
