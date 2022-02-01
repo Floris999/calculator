@@ -31,7 +31,7 @@ let adremName = verhuurderInfo._verhuurder[0];
 let adremBus = verhuurderInfo._bus[0];
 let adremPpd = verhuurderInfo._ppd[0];
 let adremPpk = verhuurderInfo._ppk[0];
-let adremData = `Verhuurder: ${adremName}<br> Bus: ${adremBus}<br> Prijs per dag: ${adremPpd}<br> Prijs per km: ${adremPpk}`;
+let adremData = `Verhuurder: ${adremName}<br> Bus: ${adremBus}<br> Prijs per dag: € ${adremPpd}<br> Prijs per km: € ${adremPpk}`;
 // End Adrem data
 
 // Bo-Rent data
@@ -39,7 +39,7 @@ let borentName = verhuurderInfo._verhuurder[1];
 let borentBus = verhuurderInfo._bus[1];
 let borentPpd = verhuurderInfo._ppd[1];
 let borentPpk = verhuurderInfo._ppk[1];
-let borentData = `Verhuurder: ${borentName}<br> Bus: ${borentBus}<br> Prijs per dag: ${borentPpd }<br> Prijs per km: ${borentPpk}`;
+let borentData = `Verhuurder: ${borentName}<br> Bus: ${borentBus}<br> Prijs per dag: € ${borentPpd }<br> Prijs per km: € ${borentPpk}`;
 // End Bo-Rent data
 
 // Hertz data
@@ -47,7 +47,7 @@ let hertzName = verhuurderInfo._verhuurder[2];
 let hertzBus = verhuurderInfo._bus[2];
 let hertzPpd = verhuurderInfo._ppd[2];
 let hertzPpk = verhuurderInfo._ppk[2];
-let hertzData = `Verhuurder: ${hertzName}<br> Bus: ${hertzBus}<br> Prijs per dag: ${hertzPpd}<br> Prijs per km: ${hertzPpk}`;
+let hertzData = `Verhuurder: ${hertzName}<br> Bus: ${hertzBus}<br> Prijs per dag: € ${hertzPpd}<br> Prijs per km: € ${hertzPpk}`;
 // End Hertz
 
 //start of innerhtml cards
@@ -76,11 +76,11 @@ let selectName = () => {
 let selectPeriode = () => {
   let userPeriode = document.getElementById("periode").value;
   if(document.getElementById('bus').value === "citroën") {
-      document.getElementById("adrem-dag").innerHTML = "Totaal aantal dagen: " + "€ " + verhuurderInfo._ppd[0] * parseInt(userPeriode);
+      document.getElementById("adrem-dag").innerHTML = "Totaal aantal dagen: " + "€ " + verhuurderInfo._ppd[0].toFixed() * parseInt(userPeriode).toFixed();
   }else if(document.getElementById('bus').value === "volkswagen") {
-      document.getElementById("borent-dag").innerHTML = "Totaal aantal dagen: " + "€ " + verhuurderInfo._ppd[1] * parseInt(userPeriode);
+      document.getElementById("borent-dag").innerHTML = "Totaal aantal dagen: " + "€ " + verhuurderInfo._ppd[1].toFixed() * parseInt(userPeriode).toFixed();
   }else if(document.getElementById('bus').value === "toyota") {
-      document.getElementById("hertz-dag").innerHTML = "Totaal aantal dagen: " + "€ " + verhuurderInfo._ppd[2] * parseInt(userPeriode);
+      document.getElementById("hertz-dag").innerHTML = "Totaal aantal dagen: " + "€ " + verhuurderInfo._ppd[2].toFixed() * parseInt(userPeriode).toFixed();
   }
 }
 //end of selected days function
@@ -89,11 +89,11 @@ let selectPeriode = () => {
 let selectKm = () => {
   let userKm = document.getElementById("km").value;
   if(document.getElementById('bus').value === "citroën") {
-      document.getElementById("adrem-km").innerHTML = "Totaal aantal km: " + "€ " + verhuurderInfo._ppk[0] * parseInt(userKm);
+      document.getElementById("adrem-km").innerHTML = "Totaal aantal km: " + "€ " + verhuurderInfo._ppk[0] * Math.round(parseInt(userKm));
   }else if (document.getElementById('bus').value === "volkswagen") {
-      document.getElementById("borent-km").innerHTML = "Totaal aantal km: " + "€ " + verhuurderInfo._ppk[1] * parseInt(userKm);
+      document.getElementById("borent-km").innerHTML = "Totaal aantal km: " + "€ " + verhuurderInfo._ppk[1] * Math.round(parseInt(userKm));
   }else if(document.getElementById('bus').value === "toyota") {
-      document.getElementById("hertz-km").innerHTML = "Totaal aantal km: " + "€ " + verhuurderInfo._ppk[2] * parseInt(userKm);
+      document.getElementById("hertz-km").innerHTML = "Totaal aantal km: " + "€ " + verhuurderInfo._ppk[2] * Math.round(parseInt(userKm));
   }
 }
 //end of selected km function
